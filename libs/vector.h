@@ -1,0 +1,8 @@
+//
+// Created by ну я on 31.01.2022.
+//
+
+#ifndef LABA5BVECTORS_VECTOR_H
+#define LABA5BVECTORS_VECTOR_H
+
+#endif //LABA5BVECTORS_VECTOR_H
