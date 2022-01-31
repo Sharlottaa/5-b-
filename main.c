@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include "libs/vector.h"
+#include <stdint.h>
+#include "libs/vector.h"
 
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
+int main () {
+    vector v = createVector ( ) ;
+
+     return 0;
+    }
