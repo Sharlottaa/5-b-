@@ -13,29 +13,30 @@ vector createVector(size_t n) {
     return (vector) {a, 0, n};
 }
 
-void reserve(vector *v, size_t newCapacity){
-    if(newCapacity==0){
-        v->data=NULL;
-    }else if(newCapacity<v->size){
-        v->size=newCapacity;
-    }else{
-        int *a=realloc(v->data,sizeof (int)*newCapacity);
+void reserve(vector *v, size_t newCapacity) {
+    if (newCapacity == 0) {
+        v->data = NULL;
+    } else if (newCapacity < v->size) {
+        v->size = newCapacity;
+    } else {
+        int *a = realloc(v->data, sizeof(int) * newCapacity);
         if (NULL == a) {
             fprintf(stderr, "bad alloc ");
             exit(1);
         }
+        v->capacity = newCapacity;
     }
 }
 
-void clear(vector *v){
-    v->size=0;
+void clear(vector *v) {
+    v->size = 0;
 }
 
-void shrinkToFit(vector *v){
+void shrinkToFit(vector *v) {
     reserve(v, v->size);
 }
 
-void deleteVector(vector *v){
+void deleteVector(vector *v) {
     free(v->size);
 }
 
@@ -47,6 +48,21 @@ bool isFull(vector *v){
 }
 
 int getVectorValue(vector *v, size_t i){
-
+    return v->data[i];
 }
+
+void append (int *a , size_t *n , const int value ) {
+    a [*n] = value ;
+    (*n)++;
+}
+
+void pushBack(vector *v, int x) {
+    if (v->capacity == 0) {
+        reserve(v, 1);
+    } else if (v->size == v->capacity) {
+        reserve(v, 2 * v);
+    }
+    append(v->data, &v.size, x);
+}
+
 
