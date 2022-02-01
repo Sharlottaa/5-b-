@@ -38,3 +38,15 @@ void shrinkToFit(vector *v){
 void deleteVector(vector *v){
     free(v->size);
 }
+
+bool isEmpty(vector *v){
+    return v->size==0;
+}
+bool isFull(vector *v){
+    return v->size==v->capacity;
+}
+
+int getVectorValue(vector *v, size_t i){
+
+}
+
