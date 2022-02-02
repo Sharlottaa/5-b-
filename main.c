@@ -48,6 +48,8 @@ void test_pushBack_emptyVector4() {
     assert(v.capacity == 1);
 }
 
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
+
 void test_pushBack_fullVector1() {
     vector v = createVector(0);
     pushBack(&v, 10);
@@ -84,6 +86,8 @@ void test_pushBack_fullVector3() {
     assert(v.data[0] == 10);
 }
 
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
+
 void test_popBack_notEmptyVector1() {
     vector v = createVector(0);
     pushBack(&v, 10);
@@ -107,6 +111,8 @@ void test_popBack_notEmptyVector2() {
     assert (v.size == 0);
     assert (v.capacity == 2);
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_popBack_notFullVector1() {
     vector v = createVector(3);
@@ -144,6 +150,8 @@ void test_popBack_notFullVector2() {
     assert(isFull(&v) == 0);
 }
 
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
+
 void test_atVector_notEmptyVector1() {
     vector v = createVector(0);
     pushBack(&v, 10);
@@ -158,14 +166,17 @@ void test_atVector_notEmptyVector2() {
     pushBack(&v, 7);
     popBack(&v);
     assert(&(v.data[1]) == atVector(&v, 1));
+    assert(v.data[1] == 42);
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_atVector_requestToLastElement1() {
     vector v = createVector(2);
     pushBack(&v, 10);
-
     pushBack(&v, 42);
     assert(&(v.data[1]) == atVector(&v, 1));
+    assert(v.data[1] == 42);
 }
 
 void test_atVector_requestToLastElement2() {
@@ -175,13 +186,19 @@ void test_atVector_requestToLastElement2() {
     pushBack(&v, 7);
     pushBack(&v, 5);
     assert(&(v.data[3]) == atVector(&v, 3));
+    assert(v.data[3] == 5);
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_back_oneElementInVector() {
     vector v = createVector(0);
     pushBack(&v, 42);
     assert(&(v.data[0]) == back(&v));
+    assert(v.data[0] == 42);
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_back_elementsInVector1() {
     vector v = createVector(4);
@@ -190,6 +207,7 @@ void test_back_elementsInVector1() {
     pushBack(&v, 7);
     pushBack(&v, 5);
     assert(&(v.data[3]) == back(&v));
+    assert(v.data[3] == 5);
 }
 
 void test_back_elementsInVector2() {
@@ -201,13 +219,19 @@ void test_back_elementsInVector2() {
     pushBack(&v, 2);
     pushBack(&v, 1);
     assert(&(v.data[5]) == back(&v));
+    assert(v.data[5] == 1);
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_front_oneElementInVector() {
     vector v = createVector(0);
     pushBack(&v, 42);
     assert(&(v.data[0]) == front(&v));
+    assert(v.data[0] == 42);
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_front_elementsInVector() {
     vector v = createVector(5);
@@ -217,8 +241,11 @@ void test_front_elementsInVector() {
     pushBack(&v, 5);
     pushBack(&v, 2);
     pushBack(&v, 1);
+    assert(v.data[0] == 42);
     assert(&(v.data[0]) == front(&v));
 }
+
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test_front_elementInVector() {
     vector v = createVector(0);
@@ -227,6 +254,7 @@ void test_front_elementInVector() {
     assert(&(v.data[0]) == front(&v));
 }
 
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 void test() {
     test_pushBack_emptyVector1();
@@ -252,7 +280,10 @@ void test() {
     test_front_elementInVector();
 }
 
+//❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
+
 int main() {
     test();
+
     return 0;
 }
