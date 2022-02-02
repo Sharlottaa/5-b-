@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
+
 #ifndef LABA5BVECTORS_VECTOR_H
 #define LABA5BVECTORS_VECTOR_H
 typedef struct vector {
@@ -41,4 +42,14 @@ void pushBack(vector *v, int x);
 
 //удаляет последний элемент из вектора
 void popBack(vector *v);
+
+//возвращает указатель на index-ый элемент вектора
+int *atVector(vector *v, size_t index);
+
+//возвращает указатель на последний элемент вектора
+int *back(vector *v);
+
+//возвращает указатель на первый элемент вектора
+int *front(vector *v);
+
 #endif //LABA5BVECTORS_VECTOR_H
