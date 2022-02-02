@@ -38,4 +38,7 @@ int getVectorValue(vector *v, size_t i);
 
 //добавляет элемент x в конец вектора v.
 void pushBack(vector *v, int x);
+
+//удаляет последний элемент из вектора
+void popBack(vector *v);
 #endif //LABA5BVECTORS_VECTOR_H

@@ -40,19 +40,20 @@ void deleteVector(vector *v) {
     free(v->size);
 }
 
-bool isEmpty(vector *v){
-    return v->size==0;
-}
-bool isFull(vector *v){
-    return v->size==v->capacity;
+bool isEmpty(vector *v) {
+    return v->size == 0;
 }
 
-int getVectorValue(vector *v, size_t i){
+bool isFull(vector *v) {
+    return v->size == v->capacity;
+}
+
+int getVectorValue(vector *v, size_t i) {
     return v->data[i];
 }
 
-void append (int *a , size_t *n , const int value ) {
-    a [*n] = value ;
+void append(int *a, size_t *n, const int value) {
+    a[*n] = value;
     (*n)++;
 }
 
@@ -60,9 +61,20 @@ void pushBack(vector *v, int x) {
     if (v->capacity == 0) {
         reserve(v, 1);
     } else if (v->size == v->capacity) {
-        reserve(v, 2 * v);
+        reserve(v, v->capacity*2);
     }
-    append(v->data, &v.size, x);
+    append(v->data, &v->size, x);
 }
+
+void popBack(vector *v) {
+    if (isEmpty(&v) == 1) {
+        fprintf(stderr, "The vector is empty, we upload the execution with exit... 1");
+        exit(1);
+    } else {
+        (v->size)--;
+    }
+}
+
+
 
 
