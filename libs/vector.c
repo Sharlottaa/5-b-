@@ -86,11 +86,13 @@ int *atVector(vector *v, size_t index) {
 }
 
 int *back(vector *v) {
-    return &(atVector(v, v->size - 1));
+    int *ip=atVector(v, v->size - 1);
+    return ip;
 }
 
 int *front(vector *v) {
-    return &(atVector(v, 0));
+    int *ip=atVector(v, 0);
+    return ip;
 }
 
 
