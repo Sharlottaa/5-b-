@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "vector.h"
+#include <assert.h>
 
 vector createVector(size_t n) {
     int *a = (int *) malloc(sizeof(int) * n);
@@ -76,6 +77,7 @@ void popBack(vector *v) {
 }
 
 int *atVector(vector *v, size_t index) {
+    assert(v->size > 0);
     if (index > v->capacity) {
         fprintf(stderr, "IndexError: a[index] is not exists\"");
         exit(1);
@@ -86,12 +88,14 @@ int *atVector(vector *v, size_t index) {
 }
 
 int *back(vector *v) {
-    int *ip=atVector(v, v->size - 1);
+    assert(v->size > 0);
+    int *ip = atVector(v, v->size - 1);
     return ip;
 }
 
 int *front(vector *v) {
-    int *ip=atVector(v, 0);
+    assert(v->size > 0);
+    int *ip = atVector(v, 0);
     return ip;
 }
 

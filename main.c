@@ -156,7 +156,6 @@ void test_popBack_notFullVector2() {
 void test_atVector_notEmptyVector1() {
     vector v = createVector(0);
     pushBack(&v, 10);
-    popBack(&v);
     assert(&(v.data[0]) == atVector(&v, 0));
 }
 
@@ -251,7 +250,6 @@ void test_front_elementsInVector() {
 void test_front_elementInVector() {
     vector v = createVector(0);
     pushBack(&v, 42);
-    popBack(&v);
     assert(&(v.data[0]) == front(&v));
 }
 
