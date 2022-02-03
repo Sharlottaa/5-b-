@@ -89,5 +89,6 @@ void pushBackV(vectorVoid *v, void *source){
     } else if (v->size == v->capacity) {
         reserveV(v, v->capacity * 2);
     }
-    setVectorValueV(v->data,v->size,source);
+    setVectorValueV(v,v->size,source);
+    v->size++;
 }

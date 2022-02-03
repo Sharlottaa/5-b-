@@ -1,2 +1,3 @@
 add_library(libs
-        vector.c)
+        vector.c
+        vectorVoid.c)
