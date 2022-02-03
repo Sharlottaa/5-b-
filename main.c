@@ -253,16 +253,63 @@ void test_front_elementInVector() {
 
 //❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
-void test_pushBackV_emptyVector1() {
+void test_pushBackV_emptyVector() {
     vectorVoid v = createVectorV(0, sizeof(int));
-    int x = 4;
+    int x = 42;
+    pushBackV(&v, &x);
+    int i = 5;
+    pushBackV(&v, &i);
+    int y;
+    getVectorValueV(&v, 1, &y);
+
+    assert(i == y);
+    assert(v.size == 2);
+    assert(v.capacity == 2);
+    assert(y == 5);
+}
+
+void test_pushBackV_fullVector() {
+    vectorVoid v = createVectorV(3, sizeof(int));
+    int x = 43;
     pushBackV(&v, &x);
     int i = 4;
     pushBackV(&v, &i);
-    popBack(&v);
+    popBackV(&v);
+    int j = 78;
+    pushBackV(&v, &j);
+    int l = 8;
+    pushBackV(&v, &l);
+    int y;
+    getVectorValueV(&v, 2, &y);
+    assert(l == y);
+
+    assert(v.size == 3);
+    assert(v.capacity == 3);
+    assert(isFullV(&v) == 1);
+    assert(y == 8);
+}
+
+void test_popBackV_notEmptyVector() {
+    vectorVoid v = createVectorV(0, sizeof(int));
+    int x = 43;
+    pushBackV(&v, &x);
+    int i = 4;
+    pushBackV(&v, &i);
+    popBackV(&v);
+    int j = 78;
+    pushBackV(&v, &j);
+    popBackV(&v);
+    int l = 8;
+    pushBackV(&v, &l);
+    popBackV(&v);
     int y;
     getVectorValueV(&v, 0, &y);
-    assert(x==y);
+    assert(x == y);
+    assert(y == 43);
+
+    assert(v.size == 1);
+    assert(v.capacity == 2);
+    assert(isEmptyV(&v) == 0);
 }
 
 void test() {
@@ -287,29 +334,15 @@ void test() {
     test_front_oneElementInVector();
     test_front_elementsInVector();
     test_front_elementInVector();
-    test_pushBackV_emptyVector1();
+    test_pushBackV_emptyVector();
+   test_pushBackV_fullVector();
+   test_popBackV_notEmptyVector();
 }
 
 //❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
 int main () {
-    size_t n;
-    scanf("%zd", &n);
-
-    vectorVoid v = createVectorV(0, sizeof(int));
-    for (int i = 0; i < n; i++) {
-        int x;
-        scanf("%d", &x);
-
-        pushBackV(&v, &x);
-    }
-
-    for (int i = 0; i < n; i++) {
-        int x;
-        getVectorValueV(&v, i, &x);
-
-        printf("%d ", x);
-    }
+    test();
 
     return 0;
 }
