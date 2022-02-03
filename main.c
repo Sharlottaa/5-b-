@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include "libs/vector.h"
-#include <stdint.h>
 #include "libs/vector.h"
 #include <assert.h>
 
