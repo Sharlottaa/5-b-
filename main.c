@@ -1,4 +1,5 @@
 #include "libs/vector.h"
+#include "libs/vectorVoid.h"
 #include <assert.h>
 
 
@@ -252,6 +253,15 @@ void test_front_elementInVector() {
 
 //❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
+void test_pushBackV_emptyVector1() {
+    vectorVoid v = createVectorV(0, sizeof(int));
+    int x = 4;
+    pushBackV(&v, &x);
+    int y;
+    getVectorValueV(&v, 0, &y);
+    assert(x==y);
+}
+
 void test() {
     test_pushBack_emptyVector1();
     test_pushBack_emptyVector2();
@@ -274,12 +284,13 @@ void test() {
     test_front_oneElementInVector();
     test_front_elementsInVector();
     test_front_elementInVector();
+    test_pushBackV_emptyVector1();
 }
 
 //❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡ ❤ ♡
 
-int main() {
-    test();
+int main () {
+test();
 
     return 0;
 }
